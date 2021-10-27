@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+.fondo {
+    background: linear-gradient(0deg, #170055,#3E00FF,#AE00FB,#B5FFD9,#54618d,#18245a,#208ea2,#498ada,#5b73df,#897ed3,#69b8b1,#102321);
+    background-size: 600% 600%;
+    animation: coloresFondo 30s ease infinite alternate;
+    background-size: 100% 1100%;
+    height: 100vh;
+    width: 100vw;
+}
+
+h1 {
+    color: #fff;
+    margin: 0px auto;
+    padding-top: 80px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 5em;
+    animation: entradaTitulo 7s ease 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
+}
+
+.perspectiva {
+    perspective: 300px;
+}
+
+.cubo {
+    margin: 50px auto;
+    font-size: 4em;
+    width: 2em;
+    margin: 1.5em auto;
+    transform-style: preserve-3d;
+    transform: rotateX(-25deg) rotateY(40deg);
+    transform-origin: 50% 50%;
+    animation-name: giroCubo;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+.side {
+    position: absolute;
+    background: #fff;
+    border-radius: 15px;
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    backface-visibility: hidden;
+    animation-name: tamañoCubo;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.front {
+    transform: translateZ(1.3em);
+}
+
+.back {
+    transform: rotateY(-180deg) translateZ(1.3em);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(1.3em);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(1.3em);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(1.3em);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(1.3em);
+}
+
+@keyframes giroCubo {
+    0% {transform: rotateX(-20deg) rotateY(0deg);}
+    100% {transform: rotateX(-20deg) rotateY(360deg);}
+}
+
+@keyframes tamañoCubo {
+    0% {width: 2em; height: 2em;}
+    50% {width: 2.5em; height: 2.5em;}
+    100% {width: 2em; height: 2em;}
+}
+
+@keyframes coloresFondo {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 0% 100%; }
+  }
+  
+  @keyframes entradaTitulo {
+    0% {opacity: 0; transform: scale(1.5) translateY(-0.75em);}
+    20% {opacity: 1;}
+    90% {opacity: 1; transform: scale(1);}
+    100% {opacity: 1; transform: translateZ(-1000em);}
+  }
